@@ -6,9 +6,9 @@ Fork or download the zip file of the repository. <br><br>
 Then, Download DbBrowser for specific OS. <br><br>
 Now, Create a Database named Student. <br><br>
 After creating database,<br>
-After that, Create a Student table with fields <br>
+Create a Student table with fields <br>
 .name <br>
-.roll no <br>(primary key)
+.roll no (primary key)<br>
 .surname <br>
 .college <br>
 .branch <br>
