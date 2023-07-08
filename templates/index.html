@@ -3,34 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <title>Welcome</title>
 </head>
 <body>
+
+   
     <div class="studentRegForm">
-            <form>
-                <table>
+            <form action="{{ url_for('index') }}" method="POST">
+                <table> 
                     <tr>
-                        <td>Name:</td>
-                        <td><input type="text" id="firstName" ></td>
+                        <td class="headings">Name:</td>
+                        <td><input type="text" id="firstName" name="name"></td>
                     </tr>
 
                     <tr>
-                        <td>Surname:</td>
-                        <td><input type="text" id="surname" ></td>
+                        <td class="headings">Surname:</td>
+                        <td><input type="text" id="surname" name="surname"></td>
                     </tr>
 
                     <tr>
-                        <td>DOB:</td>
-                        <td><input type="date" id="dob" ></td>
+                        <td class="headings">DOB:</td>
+                        <td><input type="date" id="dob" name="dob" ></td>
                     </tr>
 
                     <tr>
-                        <td>College Name:</td>
-                        <td><input type="text" id="collegeName" ></td>
+                        <td class="headings">College Name:</td>
+                        <td><input type="text" name="collegename" id="collegeName" ></td>
                     </tr>
 
                     <tr>
-                        <td>Branch:</td>
+                        <td class="headings">Year</td>
+                        <td><select name="year" id="year" >
+                            <option value="1">I</option>
+                            <option value="2">II</option>
+                            <option value="3">III</option>
+                            <option value="4">IV</option>
+                            </select>
+                            </td>
+                    </tr>
+
+                    <tr>
+                        <td class="headings">Branch:</td>
                         <td><select name="branch" id="branch" >
                             <option value="CSE">CSE</option>
                             <option value="IT">IT</option>
@@ -47,15 +61,29 @@
                         </td>
                     </tr>
 
+                    <tr>
+                        <td class="headings">Roll No:</td>
+                        <td><input type="text" name="rollno" id="rollno" ></td>
+                    </tr>
+                    
+
                 </table>
-                <button type="submit">Sumbit</button>
+                <div style="text-align: center;">
+                    <button type="submit">Submit</button>
+                </div>
+                
             </form>
 
     </div>
    
-
-    <div>
-        Show Students List
+    <div style="text-align:center;">
+       <a href="{{ url_for('getdata') }}" > <button class="getdatabtn">Get Student's Data</button></a>
     </div>
+
+
+  <div class="statusbox">
+                                {{message}}
+</div>
+   
 </body>
 </html>

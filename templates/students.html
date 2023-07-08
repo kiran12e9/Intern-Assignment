@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/studentdetails.css') }}">
+    <title>Students</title>
+</head>
+<body>
+   
+    <h1>Student Data</h1>
+    
+    <div class="result">
+        {%if students %}
+    <table>
+       
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>College</th>
+            <th>Roll No</th>
+            <th>Branch</th>
+            <th>Year</th>
+            <th>Date of Birth</th> 
+        </tr>
+        {% for student in students %}
+         <tr>
+            <td>{{loop.index}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.surname}}</td>
+            <td>{{student.college}}</td>
+            <td>{{student.roll_no}}</td>
+            <td>{{student.branch}}</td>
+            <td>{{student.year}}</td>
+            <td>{{student.dob}}</td>
+         </tr>
+        {% endfor %}
+    </table>
+{% else %}
+<H2 color="Orange">No Students Found</H2>
+</div>
+{% endif %}
+<div style="text-align:center;">
+    <a href="{{ url_for('index') }}" > <button class="getdatabtn" >Add another Student</button></a>
+ </div>
+</body>
+</html>
